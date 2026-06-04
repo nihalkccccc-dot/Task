@@ -22,7 +22,7 @@ function App() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/tasks");
+      const res = await axios.get("https://task-bupu.onrender.com/tasks");
       setTasks(res.data);
     } catch (error) {
       console.log(error);
@@ -43,7 +43,7 @@ function App() {
       };
 
       const res = await axios.post(
-        "http://localhost:3000/tasks",
+        "https://task-bupu.onrender.com/tasks",
         newTask
       );
 
@@ -59,7 +59,7 @@ function App() {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/tasks/${id}`);
+      await axios.delete(`https://task-bupu.onrender.com/tasks/${id}`);
 
       setTasks(tasks.filter((task) => task._id !== id));
     } catch (error) {
